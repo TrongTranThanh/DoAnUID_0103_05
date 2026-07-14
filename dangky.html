@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Đăng ký</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main style="min-height: 60vh;">
+        <div class="auth-container" style="justify-content: center;">
+            <div style="background: var(--light-gray); padding: 50px; border-radius: 12px; border: 1px solid var(--gray);">
+                
+                <!-- Nút Back lại trang chủ -->
+                <a href="index.html" class="link-blue" style="margin-bottom: 15px; display: inline-block;">
+                    &larr; Quay lại trang chủ
+                </a>
+                
+                <h2 class="auth-title" style="display: block; margin-bottom: 30px;">Đăng ký tài khoản</h2>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Nhập địa chỉ email của bạn">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" placeholder="Nhập mật khẩu">
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận mật khẩu</label>
+                    <input type="password" placeholder="Nhập lại mật khẩu">
+                </div>
+                <button class="btn-outline-red" style="width: 100%; margin-top: 15px; background: var(--black); color: var(--white); border-color: var(--black);">Tạo tài khoản</button>
+                
+                <div style="margin-top: 25px; text-align: center; font-size: 14px;">
+                    Đã có tài khoản? <a href="dangnhap.html" class="link-blue" style="display: inline; font-weight: bold;">Đăng nhập tại đây</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

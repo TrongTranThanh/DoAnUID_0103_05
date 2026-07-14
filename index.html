@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tự động load Header -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Tự động load Banner -->
+        <section id="banner-container" class="banner"></section>
+
+        <!-- Đưa Section Triết lý LifeWear lên trên -->
+        <section class="brand-info-section">
+            <h2 class="brand-info-title">LifeWear - Khởi nguồn từ giá trị Nhật Bản</h2>
+            <p class="brand-info-desc">
+                Trang phục thiết kế tối giản, chất lượng cao, thiết thực và luôn được cải tiến. 
+                LifeWear mang đến những thiết kế tinh tế, hiện đại, phù hợp với mọi phong cách sống. 
+                Chào mừng bạn đến với sự thoải mái không giới hạn từ công nghệ độc quyền của UNIQLO.
+            </p>
+        </section>
+
+        <!-- Đưa Section Dịch Vụ Khách Hàng lên trên -->
+        <section class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">Giao hàng</div>
+                <h4>Giao hàng miễn phí</h4>
+                <p>Cho mọi đơn hàng từ 999.000 VNĐ. Giao hàng tận nơi trên toàn quốc.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">Đổi trả</div>
+                <h4>Đổi trả dễ dàng</h4>
+                <p>Đổi trả linh hoạt trong vòng 30 ngày tại bất kỳ cửa hàng UNIQLO nào.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">Chất lượng</div>
+                <h4>Chất lượng đảm bảo</h4>
+                <p>Sản phẩm chính hãng với công nghệ độc quyền AIRism, HEATTECH.</p>
+            </div>
+        </section>
+
+        <!-- Tự động load Sản phẩm đẩy xuống dưới -->
+        <section class="product-section">
+            <h2 class="section-title">Sản phẩm nổi bật</h2>
+            <div id="product-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <!-- Tự động load Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Gọi Data trước, Logic sau -->
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
