@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục Nam</title>
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3.1.1/dist/iconify.min.js"></script>
+    <style>
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; flex-direction: column; min-height: 100vh; background-color: #f4f4f4; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; border-bottom: 1px solid #ddd; }
+        .logo-nav { display: flex; align-items: center; gap: 30px; }
+        .logo { background: #ff0000; color: #fff; padding: 5px 10px; font-weight: bold; font-size: 20px; text-decoration: none; letter-spacing: 1px; }
+        nav a { text-decoration: none; color: #000; margin-right: 20px; font-size: 14px; font-weight: bold; }
+        nav a.active { color: #ff0000; }
+        .header-right { display: flex; align-items: center; gap: 20px; font-size: 14px; }
+        .header-right a { text-decoration: none; color: #000; }
+        .header-right .icon { font-size: 20px; cursor: pointer; }
+        
+        footer { background: #ff0000; color: #fff; padding: 20px 40px; font-size: 12px; margin-top: auto; }
+        .footer-container { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+        .footer-col { width: 48%; line-height: 1.6; }
+
+        /* CSS RIÊNG CHO TRANG SẢN PHẨM */
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; flex: 1; }
+        .banner { width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 30px; }
+        .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .product-item { background: #fff; padding: 15px; text-align: center; border: 1px solid #eee; }
+        .product-item img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px; }
+        .product-name { font-size: 14px; margin-bottom: 8px; color: #333; height: 40px; overflow: hidden; }
+        .product-price { font-weight: bold; color: #000; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER ĐỒNG BỘ -->
+    <header>
+        <div class="logo-nav">
+            <a href="#" class="logo">UNI QLO</a>
+            <nav>
+                <a href="#">Trang chủ</a>
+                <a href="nam.html" class="active">Nam</a>
+                <a href="nu.html">Nữ</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <a href="thanhtoan.html">Thanh toán</a>
+            <a href="#">Giỏ hàng</a>
+            <span class="icon iconify" data-icon="mdi:account-box-outline"></span>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG DANH MỤC NAM -->
+    <div class="container">
+        <!-- Thay ảnh banner nam thực tế của bạn vào đây -->
+        <img src="C:\aa\TKDDND\ĐAMH\image\banner.jpg" alt="Banner Nam" class="banner">
+        
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="C:\aa\TKDDND\ĐAMH\image\nam1.jpg" alt="Ao Thun">
+                <div class="product-name">Áo Thun Cổ Tròn SUPIMA COTTON</div>
+                <div class="product-price">293.000 VND</div>
+            </div>
+            <div class="product-item">
+                <img src="C:\aa\TKDDND\ĐAMH\image\nam2.jpg" alt="Ao Thun">
+                <div class="product-name">DRY-EX Áo Thun</div>
+                <div class="product-price">393.000 VND</div>
+            </div>
+            <div class="product-item">
+                <img src="C:\aa\TKDDND\ĐAMH\image\nam3.jpg" alt="Ao Polo">
+                <div class="product-name">AIRism Áo Polo</div>
+                <div class="product-price">493.000 VND</div>
+            </div>
+            <div class="product-item">
+                <img src="C:\aa\TKDDND\ĐAMH\image\nam4.jpg" alt="Ao Sơ mi">
+                <div class="product-name">DRY-EX Áo Phông</div>
+                <div class="product-price">593.000 VND</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER ĐỒNG BỘ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <strong>CÔNG TY TNHH UNIQLO VIỆT NAM</strong><br>
+                Giấy chứng nhận đăng ký doanh nghiệp số 0315299474, cấp lần đầu ngày 02/10/2018.
+            </div>
+            <div class="footer-col" style="text-align: right;">
+                Địa chỉ trụ sở chính: Tầng 26, Saigontown Centre, 67 Đường Lê Lợi, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh.<br>
+                Điện thoại: 028 3821 6813
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
