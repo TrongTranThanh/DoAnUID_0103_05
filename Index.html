@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý hồ sơ thành viên - Uniqlo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-uniqlo" onclick="goHome()" style="cursor: pointer;">
+                <span>UNI</span>
+                <span>QLO</span>
+            </div>
+            <div class="user-avatar">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-container">
+
+        <div id="screen-landing" class="screen active">
+            <h1 class="page-title-center">Hồ sơ thành viên</h1>
+            <ul class="landing-menu">
+                <li onclick="navigateTo('hoso')">Hồ sơ</li>
+                <li onclick="navigateTo('doimk')">Đổi mật khẩu</li>
+                <li onclick="navigateTo('the')">Thẻ của tôi</li>
+                <li onclick="navigateTo('tuychon')">Cài đặt tùy chọn</li>
+            </ul>
+        </div>
+
+        <div id="screen-split" class="screen-split-layout">
+            
+            <aside class="sidebar-menu">
+                <ul>
+                    <li id="menu-hoso" onclick="switchSubView('hoso')">Hồ sơ</li>
+                    <li id="menu-doimk" onclick="switchSubView('doimk')">Đổi mật khẩu</li>
+                    <li id="menu-the" onclick="switchSubView('the')">Thẻ của tôi</li>
+                    <li id="menu-tuychon" onclick="switchSubView('tuychon')">Cài đặt tùy chọn</li>
+                </ul>
+            </aside>
+
+            <section class="content-panel">
+
+                <div id="subview-hoso" class="subview">
+                    <div class="hoso-header-block">
+                        <h2 class="subview-title">Thông tin cá nhân</h2>
+                        <div class="avatar-upload-zone">
+                            <div class="avatar-placeholder"></div>
+                            <button class="btn-sm">Chọn ảnh</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group"><label>Họ và tên</label><input type="text" value="Trần Thanh Trọng"></div>
+                        <div class="form-group"><label>Email</label><input type="email" value="trong.tran@example.com"></div>
+                        <div class="form-group"><label>Số điện thoại</label><input type="text" value="0901234567"></div>
+                        <div class="form-group">
+                            <label>Giới tính</label>
+                            <select>
+                                <option>Nam</option>
+                                <option>Nữ</option>
+                                <option>Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Ngày sinh</label><input type="date" value="2000-01-01"></div>
+                        <div class="form-group"><label>Tỉnh / Thành phố</label><input type="text" value="TP. Hồ Chí Minh"></div>
+                        <div class="form-group"><label>Quận / Huyện</label><input type="text" value="Quận 5"></div>
+                        <div class="form-group full-width"><label>Địa chỉ cụ thể</label><input type="text" value="235 Nguyễn Văn Cừ"></div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-black">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+                <div id="subview-doimk" class="subview">
+                    <h2 class="subview-title">Thay đổi mật khẩu</h2>
+                    <div class="form-single-col">
+                        <div class="form-group"><label>Mật khẩu hiện tại</label><input type="password" placeholder="••••••••"></div>
+                        <div class="form-group"><label>Mật khẩu mới</label><input type="password" placeholder="Nhập mật khẩu mới"></div>
+                        <div class="form-group"><label>Xác nhận mật khẩu mới</label><input type="password" placeholder="Nhập lại mật khẩu mới"></div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-white" onclick="goHome()">Hủy thay đổi</button>
+                        <button class="btn btn-black">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+                <div id="subview-the" class="subview">
+                    <h2 class="subview-title">Các thẻ của tôi</h2>
+                    <div class="empty-state">
+                        <p>Bạn chưa kết nối thẻ thành viên nào.</p>
+                        <button class="btn btn-black" onclick="switchSubView('themthe')">Thêm mới</button>
+                    </div>
+                </div>
+
+                <div id="subview-themthe" class="subview">
+                    <h2 class="subview-title">Thêm thẻ của tôi</h2>
+                    <div class="form-single-col">
+                        <div class="form-group"><label>Số thẻ</label><input type="text" placeholder="Nhập mã số thẻ gồm 16 số"></div>
+                        <div class="form-group"><label>Mã PIN</label><input type="password" placeholder="Nhập mã PIN thẻ"></div>
+                        <div class="form-group"><label>Họ và tên chủ thẻ</label><input type="text" placeholder="Ví dụ: TRAN THANH TRONG"></div>
+                        <div class="form-group"><label>Số điện thoại đăng ký</label><input type="text" placeholder="Nhập số điện thoại"></div>
+                        <div class="form-group otp-group">
+                            <label>Mã xác thực OTP</label>
+                            <div class="otp-input-wrapper">
+                                <input type="text" placeholder="Nhập mã OTP">
+                                <button class="btn-otp">Gửi mã</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-white" onclick="switchSubView('the')">Hủy thay đổi</button>
+                        <button class="btn btn-black">Thêm thẻ</button>
+                    </div>
+                </div>
+
+                <div id="subview-tuychon" class="subview">
+                    <h2 class="subview-title">Tùy chọn nhận thông báo</h2>
+                    <div class="tuychon-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Nhận thông tin ưu đãi và khuyến mãi qua Email cá nhân.
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Nhận thông báo tin nhắn SMS về trạng thái đơn hàng và điểm tích lũy.
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Cho phép hiển thị gợi ý sản phẩm dựa trên lịch sử mua sắm.
+                        </label>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-black">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
