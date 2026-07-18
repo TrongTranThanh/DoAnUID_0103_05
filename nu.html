@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Thời trang Nữ</title>
+    <!-- Nhúng SweetAlert2 cho thông báo -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tự động load Header -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Banner nhỏ cho trang danh mục Nữ -->
+        <div style="background-color: var(--light-gray); padding: 40px 50px; text-align: center;">
+            <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">THỜI TRANG NỮ</h1>
+            <p style="color: #666;">Khám phá bộ sưu tập áo kiểu và sơ mi nữ tinh tế, thanh lịch.</p>
+        </div>
+
+        <section class="product-section">
+            <h2 class="section-title">Áo Sơ Mi & Áo Kiểu Nữ</h2>
+            <!-- Grid chứa sản phẩm Nữ -->
+            <div id="womens-product-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <!-- Tự động load Footer -->
+    <div id="footer-container"></div>
+    
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

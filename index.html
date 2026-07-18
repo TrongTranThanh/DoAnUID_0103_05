@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Trang chủ</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main>
+
+        <section id="banner-container" class="banner"></section>
+
+
+        <section id="category-section" class="category-section"></section>
+
+     <section class="brand-info-section">
+  
+            <h2 class="brand-info-title reveal" style="transition-delay: 0s; position: relative; padding-bottom: 20px; margin-bottom: 25px;">
+                LifeWear - Khởi nguồn từ giá trị Nhật Bản
+                
+                <span class="brand-line"></span>
+            </h2>
+            
+            <!-- Mô tả hiện ra sau (delay 0.3s) để tạo độ sâu -->
+            <p class="brand-info-desc reveal" style="transition-delay: 0.3s;">
+                Trang phục thiết kế tối giản, chất lượng cao, thiết thực và luôn được cải tiến. LifeWear mang đến những thiết kế tinh tế, hiện đại, phù hợp với mọi phong cách sống. Chào mừng bạn đến với sự thoải mái không giới hạn từ công nghệ độc quyền của UNIQLO.
+            </p>
+        </section>
+        <section class="features-grid">
+            <!-- Cột 1: Không delay -->
+            <div class="feature-item reveal" style="transition-delay: 0s;">
+                <div class="feature-icon" style="font-size: 16px; font-weight: bold; line-height: 1.2; text-align: center;">Giao<br>hàng</div>
+                <h4>Giao hàng miễn phí</h4>
+                <p>Cho mọi đơn hàng từ 999.000 VNĐ. Giao hàng tận nơi trên toàn quốc.</p>
+            </div>
+            
+            <!-- Cột 2: Delay 0.2s -->
+            <div class="feature-item reveal" style="transition-delay: 0.2s;">
+                <div class="feature-icon" style="font-size: 16px; font-weight: bold; line-height: 1.2; text-align: center;">Đổi<br>trả</div>
+                <h4>Đổi trả dễ dàng</h4>
+                <p>Đổi trả linh hoạt trong vòng 30 ngày tại bất kỳ cửa hàng UNIQLO nào.</p>
+            </div>
+            
+            <!-- Cột 3: Delay 0.4s -->
+            <div class="feature-item reveal" style="transition-delay: 0.4s;">
+                <div class="feature-icon" style="font-size: 16px; font-weight: bold; line-height: 1.2; text-align: center;">Chất<br>lượng</div>
+                <h4>Chất lượng đảm bảo</h4>
+                <p>Sản phẩm chính hãng với công nghệ độc quyền AIRism, HEATTECH.</p>
+            </div>
+        </section>
+
+        <!-- Tự động load Sản phẩm đẩy xuống dưới -->
+        <section class="product-section">
+            <h2 class="section-title">Sản phẩm nổi bật</h2>
+            <div id="product-grid" class="grid-container"></div>
+        </section>
+        <section class="bonus-section">
+            <!-- Khối 1: Gợi ý phối đồ (Ảnh bên trái) -->
+            <div class="bonus-box reveal">
+                <div class="bonus-img" style="background-image: url('./data/images/bonus1.jpg');"></div>
+                <div class="bonus-text">
+                    <span class="badge" style="background: var(--black); color: var(--white);">GỢI Ý PHỐI ĐỒ</span>
+                    <h3>Phong Cách Tối Giản Mỗi Ngày</h3>
+                    <p>Khám phá muôn vàn cách mix & match với các item cơ bản. Thoải mái, năng động nhưng vẫn giữ được nét thanh lịch đặc trưng trong mọi hoàn cảnh.</p>
+                    <a href="nam.html" class="btn-bonus">Khám phá ngay</a>
+                </div>
+            </div>
+
+            <!-- Khối 2: Pixar Collection (Ảnh bên phải - dùng class reverse) -->
+            <div class="bonus-box reverse reveal">
+                <div class="bonus-img" style="background-image: url('./data/images/bonus2.jpg');"></div>
+                <div class="bonus-text">
+                    <span class="badge" style="background: var(--red); color: var(--white);">BỘ SƯU TẬP ĐẶC BIỆT</span>
+                    <h3>Kỷ Niệm 40 Năm PIXAR</h3>
+                    <p>Cùng ôn lại những thước phim tuổi thơ diệu kỳ qua bộ sưu tập áo thun UT độc quyền. Thiết kế giới hạn dành cho những người yêu mến thế giới hoạt hình.</p>
+                    <a href="nu.html" class="btn-bonus">Xem bộ sưu tập</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Đăng ký nhận email ưu đãi -->
+        <section class="newsletter-section reveal">
+            <h2>Đừng bỏ lỡ ưu đãi mới</h2>
+            <p>Đăng ký nhận email để cập nhật bộ sưu tập mới và mã giảm giá dành riêng cho bạn.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                <input type="email" id="newsletter-email" placeholder="Nhập email của bạn" required>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Tự động load Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Gọi Data trước, Logic sau -->
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

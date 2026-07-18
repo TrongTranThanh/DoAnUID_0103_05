@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý hồ sơ thành viên - Uniqlo</title>
+    <!-- Nhúng SweetAlert2 cho thông báo -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="app-container">
+        <!-- Đã xóa Màn hình Landing, hiển thị mặc định màn hình Split -->
+        <div id="screen-split" class="screen-split-layout active">
+            
+            <!-- Menu Trái -->
+            <aside class="sidebar-menu">
+                <ul>
+                    <!-- Mặc định active tab Hồ sơ -->
+                    <li id="menu-hoso" class="active" onclick="switchSubView('hoso')">Hồ sơ</li>
+                    <li id="menu-doimk" onclick="switchSubView('doimk')">Đổi mật khẩu</li>
+                    <li id="menu-the" onclick="switchSubView('the')">Thẻ của tôi</li>
+                    <li id="menu-tuychon" onclick="switchSubView('tuychon')">Cài đặt tùy chọn</li>
+                </ul>
+            </aside>
+
+            <!-- Nội dung Phải -->
+            <section class="content-panel">
+                
+                <!-- Tab Hồ Sơ (Mặc định hiện) -->
+                <div id="subview-hoso" class="subview active">
+                    <div class="hoso-header-block">
+                        <h2 class="subview-title">Thông tin cá nhân</h2>
+                        <div class="avatar-upload-zone">
+                            <div class="avatar-placeholder"></div>
+                            <button class="btn-sm">Chọn ảnh</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group"><label>Họ và tên</label><input type="text" value="Trần Chí Tính"></div>
+                        <div class="form-group"><label>Email</label><input type="email" value="tinhdev@example.com"></div>
+                        <div class="form-group"><label>Số điện thoại</label><input type="text" value="0901234567"></div>
+                        <div class="form-group">
+                            <label>Giới tính</label>
+                            <select>
+                                <option>Nam</option>
+                                <option>Nữ</option>
+                                <option>Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Ngày sinh</label><input type="date" value="2004-02-03"></div>
+                        <div class="form-group"><label>Tỉnh / Thành phố</label><input type="text" value="TP. Hồ Chí Minh"></div>
+                        <div class="form-group full-width"><label>Địa chỉ cụ thể</label><input type="text" value="Ký túc xá Đại học"></div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-black" onclick="Swal.fire({icon: 'success', title: 'Thành công', text: 'Đã lưu thông tin hồ sơ!', confirmButtonColor: '#000'})">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+                <!-- Tab Đổi mật khẩu -->
+                <div id="subview-doimk" class="subview">
+                    <h2 class="subview-title">Thay đổi mật khẩu</h2>
+                    <div class="form-single-col">
+                        <div class="form-group"><label>Mật khẩu hiện tại</label><input type="password" placeholder="••••••••"></div>
+                        <div class="form-group"><label>Mật khẩu mới</label><input type="password" placeholder="Nhập mật khẩu mới"></div>
+                        <div class="form-group"><label>Xác nhận mật khẩu mới</label><input type="password" placeholder="Nhập lại mật khẩu mới"></div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-white" onclick="switchSubView('hoso')">Hủy thay đổi</button>
+                        <button class="btn btn-black" onclick="Swal.fire({icon: 'success', title: 'Đã đổi mật khẩu', confirmButtonColor: '#000'})">Lưu thay đổi</button>
+                    </div>
+                </div>
+
+                <!-- Tab Thẻ của tôi -->
+                <div id="subview-the" class="subview">
+                    <h2 class="subview-title">Các thẻ của tôi</h2>
+                    <div class="empty-state">
+                        <p>Bạn chưa kết nối thẻ thành viên nào.</p>
+                        <button class="btn btn-black" onclick="switchSubView('themthe')">Thêm mới</button>
+                    </div>
+                </div>
+
+                <!-- View Thêm thẻ ẩn -->
+                <div id="subview-themthe" class="subview">
+                    <h2 class="subview-title">Thêm thẻ của tôi</h2>
+                    <div class="form-single-col">
+                        <div class="form-group"><label>Số thẻ</label><input type="text" placeholder="Nhập mã số thẻ gồm 16 số"></div>
+                        <div class="form-group"><label>Mã PIN</label><input type="password" placeholder="Nhập mã PIN thẻ"></div>
+                        <div class="form-group"><label>Họ và tên chủ thẻ</label><input type="text" placeholder="Ví dụ: TRAN CHI TINH"></div>
+                        <div class="form-group otp-group">
+                            <label>Mã xác thực OTP</label>
+                            <div class="otp-input-wrapper">
+                                <input type="text" placeholder="Nhập mã OTP">
+                                <button class="btn-otp" onclick="Swal.fire({icon: 'info', title: 'Mã OTP đã được gửi!', confirmButtonColor: '#000'})">Gửi mã</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-white" onclick="switchSubView('the')">Hủy</button>
+                        <button class="btn btn-black" onclick="Swal.fire({icon: 'success', title: 'Đã liên kết thẻ!', confirmButtonColor: '#000'})">Thêm thẻ</button>
+                    </div>
+                </div>
+
+                <!-- Tab Tùy chọn -->
+                <div id="subview-tuychon" class="subview">
+                    <h2 class="subview-title">Tùy chọn nhận thông báo</h2>
+                    <div class="tuychon-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked> Nhận thông tin ưu đãi và khuyến mãi qua Email cá nhân.
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox"> Nhận thông báo tin nhắn SMS về trạng thái đơn hàng.
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked> Cho phép hiển thị gợi ý sản phẩm dựa trên lịch sử mua sắm.
+                        </label>
+                    </div>
+                    <div class="btn-group-right">
+                        <button class="btn btn-black" onclick="Swal.fire({icon: 'success', title: 'Đã lưu cấu hình', confirmButtonColor: '#000'})">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Logic điều hướng của trang hồ sơ (Đã rút gọn) -->
+    <script>
+        function switchSubView(viewKey) {
+            // Tắt hết các tab nội dung
+            const subviews = document.querySelectorAll('.subview');
+            subviews.forEach(view => view.classList.remove('active'));
+            
+            // Bỏ highlight hết các mục menu
+            const menuItems = document.querySelectorAll('.sidebar-menu li');
+            menuItems.forEach(item => item.classList.remove('active'));
+            
+            // Bật tab nội dung được chọn
+            const targetSubview = document.getElementById(`subview-${viewKey}`);
+            if (targetSubview) targetSubview.classList.add('active');
+            
+            // Highlight mục menu tương ứng
+            const targetMenu = document.getElementById(`menu-${viewKey}`);
+            if (targetMenu) {
+                targetMenu.classList.add('active');
+            } else if (viewKey === 'themthe') {
+                // Nếu đang ở màn hình Thêm thẻ, vẫn sáng menu 'Thẻ của tôi'
+                document.getElementById('menu-the').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

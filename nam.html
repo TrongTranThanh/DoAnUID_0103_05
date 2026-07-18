@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Thời trang Nam</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Banner nhỏ cho trang danh mục -->
+        <div style="background-color: var(--light-gray); padding: 40px 50px; text-align: center;">
+            <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">THỜI TRANG NAM</h1>
+            <p style="color: #666;">Khám phá bộ sưu tập áo sơ mi thiết kế tối giản, chất liệu cao cấp.</p>
+        </div>
+
+        <section class="product-section">
+            <h2 class="section-title">Áo Sơ Mi Nam</h2>
+            <!-- Grid chứa sản phẩm Nam -->
+            <div id="mens-product-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

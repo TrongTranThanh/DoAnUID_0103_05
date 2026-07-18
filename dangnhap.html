@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqlo - Đăng nhập</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main>
+        <div class="auth-container">
+            <div class="login-section">
+                <h2 class="auth-title">Đăng nhập</h2>
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="username-input" placeholder="Nhập tên đăng nhập">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="password-input" placeholder="Nhập mật khẩu">
+                </div>
+                <a href="#" class="link-blue">Quên mật khẩu</a>
+                
+                <!-- Gắn hàm xử lý đăng nhập vào nút -->
+                <button class="btn-outline-red" onclick="handleLogin(event)">Đăng nhập</button>
+            </div>
+            
+            <div class="register-section">
+                <div class="register-box">
+                    <a href="dangky.html">Chưa có tài khoản ?</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script src="./data/data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
