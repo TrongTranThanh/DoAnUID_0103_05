@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3.1.1/dist/iconify.min.js"></script>
+    <style>
+        /* CSS dùng chung sao chép hoàn toàn */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; flex-direction: column; min-height: 100vh; background-color: #f4f4f4; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; border-bottom: 1px solid #ddd; }
+        .logo-nav { display: flex; align-items: center; gap: 30px; }
+        .logo { background: #ff0000; color: #fff; padding: 5px 10px; font-weight: bold; font-size: 20px; text-decoration: none; letter-spacing: 1px; }
+        nav a { text-decoration: none; color: #000; margin-right: 20px; font-size: 14px; font-weight: bold; }
+        nav a.active { color: #ff0000; }
+        .header-right { display: flex; align-items: center; gap: 20px; font-size: 14px; }
+        .header-right a { text-decoration: none; color: #000; }
+        .header-right a.active { color: #ff0000; font-weight: bold; }
+        .header-right .icon { font-size: 20px; cursor: pointer; }
+        
+        footer { background: #ff0000; color: #fff; padding: 20px 40px; font-size: 12px; margin-top: auto; }
+        .footer-container { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+        .footer-col { width: 48%; line-height: 1.6; }
+
+        /* CSS BỐ CỤC TRANG THANH TOÁN */
+        .checkout-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; gap: 30px; flex: 1; }
+        .checkout-left { flex: 2; background: #fff; padding: 25px; border: 1px solid #eee; }
+        .checkout-right { flex: 1; background: #fff; padding: 25px; border: 1px solid #eee; height: fit-content; }
+        
+        h3 { margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 8px; font-size: 16px; text-transform: uppercase; }
+        .form-group { margin-bottom: 15px; }
+        .form-row { display: flex; gap: 15px; }
+        .form-row .form-group { flex: 1; }
+        label { display: block; font-size: 13px; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], select { width: 100%; padding: 8px; border: 1px solid #ccc; font-size: 14px; }
+        
+        .method-option { margin: 12px 0; display: flex; align-items: center; gap: 10px; font-size: 14px; }
+        
+        /* Tóm tắt đơn hàng */
+        .summary-item { display: flex; gap: 15px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .summary-item img { width: 60px; height: 80px; object-fit: cover; }
+        .summary-info { font-size: 13px; line-height: 1.4; }
+        .total-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px; }
+        .btn-order { width: 100%; background: #ff0000; color: #fff; padding: 12px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER ĐỒNG BỘ (Active tại mục Thanh toán) -->
+    <header>
+        <div class="logo-nav">
+            <a href="#" class="logo">UNI QLO</a>
+            <nav>
+                <a href="#">Trang chủ</a>
+                <a href="nam.html">Nam</a>
+                <a href="nu.html">Nữ</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <a href="thanhtoan.html" class="active">Thanh toán</a>
+            <a href="#">Giỏ hàng</a>
+            <span class="icon iconify" data-icon="mdi:account-box-outline"></span>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG THANH TOÁN -->
+    <div class="checkout-container">
+        <!-- Bên trái: Form Nhập Liệu -->
+        <div class="checkout-left">
+            <h3>1. Địa chỉ nhận hàng</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Tên người nhận</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Thành phố / Tỉnh</label>
+                    <select>
+                        <option>Chọn Thành phố</option>
+                        <option>Hồ Chí Minh</option>
+                        <option>Hà Nội</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quận / Huyện</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ chi tiết</label>
+                <input type="text">
+            </div>
+            <div class="method-option">
+                <input type="checkbox" id="default-addr">
+                <label for="default-addr" style="margin:0; font-weight:normal;">Đặt làm địa chỉ mặc định</label>
+            </div>
+
+            <h3 style="margin-top: 30px;">2. Phương thức thanh toán</h3>
+            <div class="method-option">
+                <input type="radio" name="payment" id="pay1" checked>
+                <label for="pay1" style="margin:0; font-weight:normal;">Thẻ quốc tế (Visa/MasterCard/JCB)</label>
+            </div>
+            <div class="method-option">
+                <input type="radio" name="payment" id="pay2">
+                <label for="pay2" style="margin:0; font-weight:normal;">Ví điện tử</label>
+            </div>
+            <div class="method-option">
+                <input type="radio" name="payment" id="pay3">
+                <label for="pay3" style="margin:0; font-weight:normal;">Thanh toán khi nhận hàng (COD)</label>
+            </div>
+        </div>
+
+        <!-- Bên phải: Tóm tắt đơn hàng -->
+        <div class="checkout-right">
+            <h3>Tóm tắt đơn hàng</h3>
+            <div class="summary-item">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=100" alt="sp">
+                <div class="summary-info">
+                    <strong>Áo Thun Cổ Tròn SUPIMA COTTON</strong><br>
+                    Size: L | Màu: Nâu<br>
+                    Số lượng: 1
+                </div>
+            </div>
+            <div class="summary-item">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=100" alt="sp">
+                <div class="summary-info">
+                    <strong>Đầm Vải Linen Dáng Chữ A</strong><br>
+                    Size: L | Màu: Xám<br>
+                    Số lượng: 1
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <div class="total-row"><span>Tạm tính:</span><span>1.086.000 VND</span></div>
+                <div class="total-row"><span>Phí giao hàng:</span><span>Miễn phí</span></div>
+                <div class="total-row" style="font-weight:bold; font-size:16px; border-top:1px solid #ddd; padding-top:10px; margin-top:10px;">
+                    <span>Tổng cộng:</span><span style="color:#ff0000;">1.086.000 VND</span>
+                </div>
+            </div>
+            <button class="btn-order">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- FOOTER ĐỒNG BỘ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <strong>CÔNG TY TNHH UNIQLO VIỆT NAM</strong><br>
+                Giấy chứng nhận đăng ký doanh nghiệp số 0315299474, cấp lần đầu ngày 02/10/2018.
+            </div>
+            <div class="footer-col" style="text-align: right;">
+                Địa chỉ trụ sở chính: Tầng 26, Saigontown Centre, 67 Đường Lê Lợi, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh.<br>
+                Điện thoại: 028 3821 6813
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html> 
